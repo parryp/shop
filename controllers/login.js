@@ -6,12 +6,12 @@ module.exports = function(req, res){
   req.on('end', function() {
 	post = querystring.parse(postBody);
 	
-    if (post.userId === 'lenny' && post.password === 'markus') {
+    if (post.userId === 'shopper' && post.password === 'shopper') {
 	  console.log(req+", post.userId="+post.userId);
       req.session.userId = 'Lenny';
       res.redirect('/');
     } else {
-      res.render('login', { message : "Invalid login" } ); //send('Bad user/pass');
+      res.render('login', { message : "Invalid login" } );
     }
   });
 };
