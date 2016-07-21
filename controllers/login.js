@@ -6,9 +6,9 @@ module.exports = function(req, res){
   req.on('end', function() {
 	post = querystring.parse(postBody);
 	
-    if (post.userId === 'shopper' && post.password === 'shopper') {
+    if (post.userId.toLowerCase() === 'sally' && post.password === 'sally') {
 	  console.log(req+", post.userId="+post.userId);
-      req.session.userId = 'Lenny';
+      req.session.userId = 'Sally';
       res.redirect('/');
     } else {
       res.render('login', { message : "Invalid login" } );
