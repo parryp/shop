@@ -1,0 +1,78 @@
+<html>
+<head>
+<style>
+body { font-family: georgia }
+p { display:block; margin:2px; 0px; 2px; 0px; font-family:Arial}
+.hl { background:yellow; padding: 0px 5px 0px 5px; font-weight:bold }
+</style>
+<title>Step 3 - Get Express Checkout details (of PayPal account)</title>
+<script>
+	function handleTokenValue(inputElement)
+	{
+		inputElement.value = unescape(inputElement.value);
+	}
+	
+	function displayTitle()
+	{
+		document.getElementById("title").innerHTML=document.getElementsByTagName("title")[0].innerHTML;
+	}
+</script>
+</head>
+<body onLoad="displayTitle()">
+<h3 id="title"></h3>
+	<form method="post" action="https://api-3t.sandbox.paypal.com/nvp" >
+		<input type=hidden name="USER" value="mer01_api1.suremail.info">
+		<input type=hidden name="PWD" value="1398416239">
+		<input type=hidden name="SIGNATURE" value="An5ns1Kso7MWUdW4ErQKJJJ4qi4-AWhYhIHkdev9LU0rT8cEvX5xeRC.">
+		<input type=hidden name="VERSION" value="113">
+		<input name="TOKEN" value="" onBlur="handleTokenValue(this)"/>
+		<input type="submit" name="METHOD" value="GetExpressCheckoutDetails">
+	</form>
+<div>
+<p>Sample successful response</p>
+<p class="hl">TOKEN=EC%2d6XF66388G9537692R&</p>
+<p>CHECKOUTSTATUS=PaymentActionNotInitiated&</p>
+<p>TIMESTAMP=2014%2d04%2d27T16%3a24%3a56Z&</p>
+<p>CORRELATIONID=6a4fc2cdf1257&</p>
+<p class="hl">ACK=Success&</p>
+<p>VERSION=113&</p>
+<p>BUILD=10775543&</p>
+<p>EMAIL=cust01%40suremail%2einfo&</p>
+<p class="hl">PAYERID=HTDSN6UGRQU36&</p>
+<p>PAYERSTATUS=verified&</p>
+<p>FIRSTNAME=Betty&</p>
+<p>LASTNAME=Customer&</p>
+<p>COUNTRYCODE=SG&</p>
+<p>SHIPTONAME=Customer%20Betty&</p>
+<p>SHIPTOSTREET=123%20Thomson%20Rd%2e&</p>
+<p>SHIPTOCITY=Singapore&</p>
+<p>SHIPTOZIP=308123&</p>
+<p>SHIPTOCOUNTRYCODE=SG&</p>
+<p>SHIPTOCOUNTRYNAME=Singapore&</p>
+<p>ADDRESSSTATUS=Unconfirmed&</p>
+<p>CURRENCYCODE=USD&</p>
+<p>AMT=1%2e99&</p>
+<p>SHIPPINGAMT=0%2e00&</p>
+<p>HANDLINGAMT=0%2e00&</p>
+<p>TAXAMT=0%2e00&</p>
+<p>INSURANCEAMT=0%2e00&</p>
+<p>SHIPDISCAMT=0%2e00&</p>
+<p>PAYMENTREQUEST_0_CURRENCYCODE=USD&</p>
+<p>PAYMENTREQUEST_0_AMT=1%2e99&</p>
+<p>PAYMENTREQUEST_0_SHIPPINGAMT=0%2e00&</p>
+<p>PAYMENTREQUEST_0_HANDLINGAMT=0%2e00&</p>
+<p>PAYMENTREQUEST_0_TAXAMT=0%2e00&</p>
+<p>PAYMENTREQUEST_0_INSURANCEAMT=0%2e00&</p>
+<p>PAYMENTREQUEST_0_SHIPDISCAMT=0%2e00&</p>
+<p>PAYMENTREQUEST_0_INSURANCEOPTIONOFFERED=false&</p>
+<p>PAYMENTREQUEST_0_SHIPTONAME=Customer%20Betty&</p>
+<p>PAYMENTREQUEST_0_SHIPTOSTREET=123%20Thomson%20Rd%2e&</p>
+<p>PAYMENTREQUEST_0_SHIPTOCITY=Singapore&</p>
+<p>PAYMENTREQUEST_0_SHIPTOZIP=308123&</p>
+<p>PAYMENTREQUEST_0_SHIPTOCOUNTRYCODE=SG&</p>
+<p>PAYMENTREQUEST_0_SHIPTOCOUNTRYNAME=Singapore&</p>
+<p>PAYMENTREQUEST_0_ADDRESSSTATUS=Unconfirmed&</p>
+<p>PAYMENTREQUEST_0_ADDRESSNORMALIZATIONSTATUS=None&</p>
+<p>PAYMENTREQUESTINFO_0_ERRORCODE=0</p>
+</div></body>
+</html>

@@ -1,0 +1,23 @@
+extend layout
+block content
+  if order
+    h1 #{title}
+    .order
+      table
+        tr
+          th Name
+          th Price(SGD)
+
+          each item in order.items
+            tr
+              td= item.name
+              td= item.price
+          tr
+            td Order status
+            td #{order.status}
+      .address
+        fieldset
+          legend Shipping Address
+          p #{order.address_shipping}
+  else
+    h1 I'm sorry, we could not retrieve any order.

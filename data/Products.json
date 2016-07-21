@@ -1,0 +1,26 @@
+[
+	{
+		"id" : 1,
+		"productId" : "ACH-001",
+		"name" : "Smart phone",
+		"description" : "MediaTek MT6589 processor uses 28-nanometer process technology and ARM low-energy Cortex-A7 core, which lets you get amazing performance from your battery. Imagination Technologies SGX544 PowerVR Series GPU decodes 720p video, so you can explore immersive 3D game environments or enjoy your favourite shows in flawless HD.",
+		"price" : 198.99,
+		"imgURL" : "/img/1398708255_12.png"
+	},
+	{
+		"id" : 2,
+		"productId" : "ACH-002",
+		"name" : "Transistor Radio",
+		"description" : "A retro radio of the fifties. 8 inch block of retro cool to listen to rock and roll of the fifties.",
+		"price" : 27.99,
+		"imgURL" : "/img/1398708451_45.png"
+	},
+	{
+		"id" : 3,
+		"productId" : "ACH-003",
+		"name" : "Retro CRT TV",
+		"description" : "LG retro TV, enough said.",
+		"price" : 192.22,
+		"imgURL" : "/img/1398708475_39.png"
+	}
+]

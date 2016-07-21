@@ -1,0 +1,21 @@
+extend layout
+block content
+  table#productDisplay
+    tr
+      th Products
+      th Name
+      th Price(SGD)
+      th
+    each item in products
+      tr
+        td
+          img(src=item.imgURL)
+        td= item.name
+        td= item.price
+        td.addToCart
+          button(onClick='addToCart(\'' + item.productId + '\',\'' + item.name + '\', this)') Add
+   .checkout
+     button(onClick='checkOut(this)') Check out
+   .paymentmethod
+      img(src='https://www.paypal.com/en_US/i/logo/PayPal_mark_37x23.gif', align='left', style='margin-right:7px;')
+      span(style='font-size:11px; font-family: Arial, Verdana;') The safer, easier way to pay.

@@ -1,0 +1,31 @@
+html(lang="en")
+  head
+    title #{title}
+    link(rel='stylesheet', href='/css/main.css')
+    script(src="/js/jquery-1.9.1.min.js")
+    script(src="/js/notify.min.js")
+    script(src="/js/main.js")
+  body
+    header
+      h1 Achmed Shop of wonders
+      .topbar
+        ul
+          li
+            a(href='/') Shop
+          if user
+            li Welcome, #{user.name}
+          else
+            li
+              a(href='/login') Sign in
+          li.cart
+            a(href='/cart') Cart
+            if cartsize
+              span#cartstatus #{cartsize}
+            else
+              span#cartstatus 0
+          li
+            a(href='/about.htm') About
+    .main-content
+      block content
+    footer
+      p This is a test shop that makes use of PayPal express checkout and is by no means a real shop.

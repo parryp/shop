@@ -1,0 +1,115 @@
+body { font-family: georgia, sans-serif, arial; margin: 0px;}
+input { display: block; margin-bottom: 5px }
+small { font-size: 10px; font-family: Arial, Sans-serif }
+
+header { 
+  background-color: #F2F5A9;
+  width: 100%;
+  height: 80px;
+  margin-bottom: 5px;
+}
+header h1 { margin-left: 20px; margin-bottom: 0px; }
+.topbar ul { margin: 0px; float:right }
+.topbar li { 
+	float:left; 
+	margin:0px 10px 0px 30px;
+	padding: 5px 20px 5px 20px;
+	text-align: center;
+    background: #F4FA58;
+	list-style-type: none;
+}
+.topbar li.cart {
+	background-image: url('/img/1398708462_91.png');
+	background-size: 25px 25px;
+	background-repeat: no-repeat;
+	padding-left: 25px;
+}
+
+#cartstatus { margin-left: 5px }
+
+.main-content h1 { margin-left: auto; margin-right: auto; width: 100%; text-align:center }
+
+/* Main Product Display */
+table#productDisplay { 
+	border-collapse:collapse; 
+	width: 90%;
+	margin-left:auto;
+	margin-right:auto;
+}
+table#productDisplay th td { text-align: left; padding: 5px; }
+table#productDisplay td:first-child { text-align:center }
+table#productDisplay td:last-child { text-align:center }
+.addToCart:hover { background-color:#F2F5A9; }
+.addToCart button {
+	font-size: 18px; 
+	border-radius: 5px; 
+    background-image:url('/img/1398708462_91.png');
+	background-size:25px 25px;
+    background-repeat:no-repeat;
+    padding-left: 25px;
+	background-color: #FFFF00;
+}
+
+div.checkout button { 
+	display: block;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+	font-size: 24px;
+	background-color: #F2F5A9;
+	width: 60%;
+}
+div.paymentmethod { width: 50%; margin-left:auto; margin-right:auto }
+
+/* Order */
+div.address {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+div.address fieldset, legend {
+	border: 1px dotted black;
+}
+div.address legend { font-size: 18px; padding: 10px; background-color: #FFFFFF }
+div.address label { font-size: 24px }
+div.order_checkout { height: 150px; margin-top: 10px }
+
+/* Order confirmation */
+.order table { border-collapse:collapse; width:80%; margin-left:auto;	margin-right:auto; }
+.order table, th, td { border: 2px dotted grey; text-align: left; padding: 5px }
+img#paypalExpressCheckoutBtn { margin: 10px }
+
+/** Login **/
+div.login, div.login input { 
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	font-size: 18px;
+}
+div.login input {
+	margin-bottom: 20px;
+}
+
+/** Footer **/
+footer { 
+	text-align: center;
+	font-size: 10px;
+	margin-top: 20px;
+	display: block;
+ }
+
+/** Error **/
+p.message { 
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 18px	}
+
+/** 404 - File Not Found **/
+body.FileNotFound { font-size:24px; font-family:verdana; text-align: center }
+body.FileNotFound span.highlight { background:yellow; font-family:courier; padding:10px; }
+
+

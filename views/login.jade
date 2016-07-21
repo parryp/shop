@@ -1,0 +1,13 @@
+extend layout
+block content
+  h1 Login
+  div.login
+    form(method='post', action='/login')
+      label User id
+      input(name='userId')
+      label Password
+      input(type='password' name='password')
+      input(type='submit' value='Login')
+  if message
+    script
+      | $(document).ready( function() { $("input[name=userId]").notify( 'Invalid login', { position: "right" }, "error"); });

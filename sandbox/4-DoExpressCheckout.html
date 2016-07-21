@@ -1,0 +1,66 @@
+<html>
+<head>
+<style>
+body { font-family: georgia }
+p { display:block; margin:2px; 0px; 2px; 0px; font-family:Arial}
+.hl { background:yellow; padding: 0px 5px 0px 5px; font-weight:bold }
+input { display:block; margin-bottom: 15px }
+label span { font-size: 10px; margin-left:10px }
+label a { font-size: 10px; margin-left:10px; color:red }
+</style>
+<title>Step 4 - Do Express Checkout</title>
+<script>
+	function handleTokenValue(inputElement)
+	{
+		inputElement.value = unescape(inputElement.value);
+	}
+	
+	function displayTitle()
+	{
+		document.getElementById("title").innerHTML=document.getElementsByTagName("title")[0].innerHTML;
+	}
+</script>
+</head>
+<body onLoad="displayTitle()">
+<h3 id="title"></h3>
+	<form method="post" action="https://api-3t.sandbox.paypal.com/nvp" >
+		<input type=hidden name="USER" value="mer01_api1.suremail.info">
+		<input type=hidden name="PWD" value="1398416239">
+		<input type=hidden name="SIGNATURE" value="An5ns1Kso7MWUdW4ErQKJJJ4qi4-AWhYhIHkdev9LU0rT8cEvX5xeRC.">
+		<input type="hidden" name="VERSION" value="113">
+		<input type="hidden" name="PAYMENTREQUEST_0_PAYMENTACTION" value="Sale" />
+		<label>PayerID</label><input name="PAYERID" value="" "handleTokenValue(this)" />
+		<label>Token</label><input name="TOKEN" value="" onBlur="handleTokenValue(this)"/>
+		<label>PaymentRequest_0_Amt</label><input name="PAYMENTREQUEST_0_AMT" value="19.95" />
+		<label>PaymentRequest_0_CurrencyCode<span>USD, SGD, must correspond with SetExpressCheckout</span><a href="https://developer.paypal.com/docs/classic/api/currency_codes/">Read more</a></label><input name=PAYMENTREQUEST_0_CURRENCYCODE value="SGD" />
+		<input type="submit" name="METHOD" value="DoExpressCheckoutPayment">
+	</form>
+<div>
+<p>Sample successful response</p>
+<p>TOKEN=EC%2d6XF66388G9537692R&</p>
+<p>SUCCESSPAGEREDIRECTREQUESTED=false&</p>
+<p>TIMESTAMP=2014%2d04%2d27T16%3a43%3a19Z&</p>
+<p>CORRELATIONID=b8fbc2a99f434&</p>
+<p class="hl">ACK=Success&</p>
+<p>VERSION=113&</p>
+<p>BUILD=10775543&</p>
+<p>INSURANCEOPTIONSELECTED=false&</p>
+<p>SHIPPINGOPTIONISDEFAULT=false&</p>
+<p class="hl">PAYMENTINFO_0_TRANSACTIONID=2JB87870KS5832214&</p>
+<p class="hl">PAYMENTINFO_0_TRANSACTIONTYPE=expresscheckout&</p>
+<p>PAYMENTINFO_0_PAYMENTTYPE=instant&</p>
+<p>PAYMENTINFO_0_ORDERTIME=2014%2d04%2d27T16%3a43%3a19Z&</p>
+<p class="hl">PAYMENTINFO_0_AMT=19%2e95&</p>
+<p>PAYMENTINFO_0_FEEAMT=0%2e98&</p>
+<p>PAYMENTINFO_0_TAXAMT=0%2e00&</p>
+<p class="hl">PAYMENTINFO_0_CURRENCYCODE=USD&</p>
+<p class="hl">PAYMENTINFO_0_PAYMENTSTATUS=Completed&</p>
+<p>PAYMENTINFO_0_PENDINGREASON=None&</p>
+<p>PAYMENTINFO_0_REASONCODE=None&</p>
+<p class="hl">PAYMENTINFO_0_PROTECTIONELIGIBILITY=Eligible&</p>
+<p>PAYMENTINFO_0_PROTECTIONELIGIBILITYTYPE=ItemNotReceivedEligible%2cUnauthorizedPaymentEligible&</p>
+<p class="hl">PAYMENTINFO_0_SECUREMERCHANTACCOUNTID=JF92NPFQW8N6N&</p>
+<p class="hl">PAYMENTINFO_0_ERRORCODE=0&</p>
+<p class="hl">PAYMENTINFO_0_ACK=Success</p>
+</div></body>
+</html>

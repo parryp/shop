@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="/css/main.css">
+	<title>About</title>
+</head>
+<body>
+	<header>
+		<h1>Achmed Shop of wonders</h1>
+		<div class="topbar">
+			<ul>
+				<li><a href="/">Shop</a></li>
+			</ul>
+		</div>
+	</header>
+	<div style="margin:10px">
+	<h1 style="text-align:left">About</h1>
+	<p>This is a sample shop that integrates with PayPal, uses PayPal Express Check out. All transactions between this sample shop and to PayPal <a href="https://developer.paypal.com/docs/classic/lifecycle/ug_sandbox/">sandbox server</a>. To try, create a PayPal sandbox <a href="https://www.sandbox.paypal.com/webapps/mpp/home" alt="account here">account here</a>.</p>
+	<p>
+		A successful shopping flow to purchase is such,
+	</p>
+	<ol>
+		<li>Browse and select products to add to cart.</li>
+		<li>Check out, review list of items in shopping cart.</li>
+		<li>PayPal Check out</li>
+			<ul>
+				<li>SetExpressCheckout</li>
+					<ol>
+						<li>Sets up the Express Checkout transaction.</li>
+						<li>Define a return url for PayPal to re-direct user's browser back to merchant shop</li>
+						<li>Define a cancel url back to merchant shop; should buyer cancels.</li>
+						<li>Retrieve a token, to identify with PayPal on further communication with this transaction</li> 
+					</ol>
+				<li>GetExpressCheckoutDetails</li>
+					<ul>
+						<li>Use a token to make the request</li>
+						<li>PayPal respond with information about the buyer</li>
+					</ul>
+				<li>Re-direct to PayPal with the token</li>
+				<ol>
+					<li>Login with a PayPal (sandbox) <a href="https://www.sandbox.paypal.com/webapps/mpp/home">account</a></li>
+					<li>Review item to purchase, contact details and payment method.</li>
+					<li>Continue -&gt; re-directs back to Achmed Shop of wonders to confirm the order and furnish merchant with a delivery address.</li>
+				</ol>
+			</ul>
+		<li>Confirm Order</li>
+			<ul>
+				<li>DoExpressCheckout</li>
+				<ol>
+					<li>Makes payment to merchant via PayPal express check out</li>
+				</ol>
+			</ul>
+		<li>Order confirm</li>
+	</ul>
+	<footer>
+		<p>This is a test shop that makes use of PayPal express checkout and is by no means a real shop.</p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+extend layout
+block content
+  h1 #{title}
+  table#productDisplay
+    tr
+      th Name
+      th Price(SGD)
+      th Product Id
+      th Remove
+    - for(var i=0; i<shoppingcart.items.length; i++) {
+      tr(id= shoppingcart.items[i].itemId)
+        td= shoppingcart.items[i].name
+        td.itemPrice= shoppingcart.items[i].price
+        td= shoppingcart.items[i].productId
+        td.remove
+          a(onClick='removeFromCart("' + shoppingcart.items[i].itemId +'")') X
+    - }
+    tr
+      td Total
+      td#total(colspan="3") #{total}
+    tr
+      td(colspan="4") 
+        a(href="/cart/checkout")
+          img(src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif", align="right", style="margin-right:20px;")

@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Step 2 - Redirect to PayPal login after success (ack)</title>
+<script>
+	function redirect(token)
+	{
+		document.location.href="https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token="+unescape(token);
+	}
+	
+	function displayTitle()
+	{
+		document.getElementById("title").innerHTML=document.getElementsByTagName("title")[0].innerHTML;
+	}
+</script>
+</head>
+<body onLoad="displayTitle()">
+<h3 id="title"></h3>
+<label for="name">Escaped token</label><input id="token" name="token" />
+<button onClick="redirect(document.getElementById('token').value)">Submit</button>
+</body>
+</html>

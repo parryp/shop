@@ -1,0 +1,36 @@
+extend layout
+block content
+  if paypal && shoppingcart
+    h1 #{title}
+    form(method="post", action="/order/confirm")
+      .order
+        input(type="hidden", name="token", value="#{paypal.token}")
+        input(type="hidden", name="PayerID", value="#{paypal.PayerID}")
+
+        table.order
+          tr
+            th Name
+            th Price(SGD)
+
+          each item in shoppingcart.items
+            tr
+              td= item.name
+              td= item.price
+          tr
+            td Total
+            td #{total}
+        img(id="paypalExpressCheckoutBtn", src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif", style="margin-left:auto; margin-right:auto; display:block" onClick="document.getElementsByTagName('form')[0].submit()")
+        .address
+          fieldset
+            legend Shipping Address
+            p.small Local deliveries only
+            label Address 1
+            input(type="text", name="address_street_1", size="40" value="")
+            label Address 2
+              small (optional)
+            input(type="text", name="address_street_2", size="40" value="")
+            label Postal Code
+            input(type="text", name="address_postal_code", size="6" value="")
+            input(type="hidden", name="address_country", value="Singapore")
+        .order_checkOut
+          img(id="paypalExpressCheckoutBtn", src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif", style="margin-left:auto; margin-right:auto; display:block" onClick="document.getElementsByTagName('form')[0]submit()")
